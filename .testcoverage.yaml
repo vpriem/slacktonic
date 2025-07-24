@@ -1,0 +1,7 @@
+threshold:
+  total: 90
+
+exclude:
+  paths:
+    - _mock\.go$
+    - ^cmd
