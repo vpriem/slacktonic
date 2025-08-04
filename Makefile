@@ -14,9 +14,23 @@ test:
 
 .PHONY: coverage
 coverage: install-go-test-coverage
+	@echo "Running all tests with coverage..."
 	go test ./... -coverprofile=./coverage.out -covermode=atomic -coverpkg=./...
-	${GOBIN}/go-test-coverage --config=./.testcoverage.yaml --profile=coverage.out
+	${GOBIN}/go-test-coverage --config=./.testcoverage.yml
+
+.PHONY: install-mockgen
+install-mockgen:
+	@if [ ! -f "${GOBIN}/mockgen" ]; then \
+		echo "Installing mockgen..."; \
+		go install go.uber.org/mock/mockgen@latest; \
+	fi
+
+.PHONY: gen
+gen: install-mockgen
+	@echo "Running go generate..."
+	go generate ./...
 
 .PHONY: lint
 lint:
+	@echo "Running linter..."
 	 golangci-lint run

@@ -9,7 +9,7 @@ import (
 	"github.com/slack-go/slack"
 )
 
-//go:generate go run go.uber.org/mock/mockgen -package=slacktonic_test -destination=verifier_mock_test.go . Verifier
+//go:generate mockgen -package=slacktonic_test -destination=verifier_mock_test.go . Verifier
 
 // Verifier is an interface for verifying Slack requests and parsing slash commands.
 // It allows for custom verification logic or mocking during tests.
