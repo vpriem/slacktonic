@@ -1,6 +1,8 @@
 # slacktonic
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/vpriem/slacktonic.svg)](https://pkg.go.dev/github.com/vpriem/slacktonic)
+[![Go Report Card](https://goreportcard.com/badge/github.com/vpriem/slacktonic)](https://goreportcard.com/report/github.com/vpriem/slacktonic)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Go middleware for handling Slack slash commands in [Gin](https://github.com/gin-gonic/gin) applications.
 
